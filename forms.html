@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Forms.  We don't need no steeking forms!
+        </title>
+    </head>
+    <body>
+            <h1>A Form.</h1>
+            <form action="forms.html" method="post" name="myform">
+                <fieldset>
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName"  />
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </fieldset>
+                <fieldset>
+                    <label for="isAwesome">
+                        is Awesome?
+                        <input type="checkbox" name="isAwesome" id="isAwesome">
+                    </label>
+                </fieldset>
+                <!-- Hello and welcome to the show.  Today's topic *is* music. -->
+                <fieldset>
+                    <label>
+                        tall
+                        <input type="radio" name="height" id="height_tall" value="tall">
+                    </label>
+                    <label>
+                        short
+                        <input type="radio" name="height" id="height_short" value="short">
+                    </label>
+                </fieldset>
+                <input type="submit" value="Save Me!" id="submit">
+                <input type="reset" value="reset" id="reset">
+            </form>
+
+    </body>
+</html>
