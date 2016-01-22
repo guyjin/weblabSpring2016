@@ -1,0 +1,30 @@
+.chapter {
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.chapter h1 {
+    margin-bottom: 7rem;
+}
+
+.chapter p {
+    line-height: 1.6
+}
+
+.chapter p:first-child:first-letter {
+    float: left;
+    color: #999;
+    font-size: 75px;
+    line-height: 60px;
+}
+
+.dropcap {
+    font-family: fantasy;
+    font-size: 13rem;
+    color: red;
+    line-height: 16px;
+    margin-right: .3rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
