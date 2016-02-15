@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Translations</title>
+    </head>
+    <style media="screen">
+    .block {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        margin: 1rem;
+        color: black;
+        transition: all 1s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-family: sans-serif;
+        box-shadow: 14px 14px 4px rgba(0,0,0,0.5);
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .rotate {
+        transform: rotate(20deg);
+    }
+
+    .slide {
+        transform: translate(200px,300px); /* (x,y) */
+    }
+
+    .skew {
+        transform: skew(30deg, 30deg);
+    }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var block = $('.block');
+            $('.myButton1').on('click', function() {
+                block.toggleClass('rotate');
+            });
+            $('.myButton2').on('click', function() {
+                block.toggleClass('slide');
+            });
+            $('.myButton3').on('click', function() {
+                block.toggleClass('skew');
+            });
+        });
+    </script>
+    <body>
+        <div class="block">
+            Hello!
+        </div>
+        <button type="button" name="button" class="myButton1">Rotate</button>
+        <button type="button" name="button" class="myButton2">Slide</button>
+        <button type="button" name="button" class="myButton3">Skew</button>
+
+
+    </body>
+</html>
