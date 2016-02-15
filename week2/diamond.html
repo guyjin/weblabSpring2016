@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Baseball Diamond</title>
+    <style>
+        .field {
+            background-color: green;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .infield {
+            width: 250px;
+            height: 250px;
+            background-color: darkgreen;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(45deg);
+            position: absolute;
+            bottom: 75px;
+            left: 125px;
+            z-index: 2;
+        }
+
+        .infield * {
+            z-index: 2;
+            position: relative;
+        }
+
+        .homePlate,
+        .pitchersMound,
+        .basePath {
+            background-color: tan;
+        }
+
+        .basePath {
+            position: absolute;
+            z-index: 1;
+            width: 250px;
+            height: 250px;
+        }
+
+        .base {
+            width: 14px;
+            height: 14px;
+            background-color: white;
+            position: absolute;
+        }
+
+        .firstBase {
+            top: 0;
+            right: 0;
+        }
+
+        .secondBase {
+            top: 0;
+            left: 0;
+        }
+
+        .thirdBase {
+            bottom: 0;
+            left: 0;
+        }
+
+        .homePlate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            border-radius: 25px;
+        }
+
+        .pitchersMound {
+            width: 60px;
+            height: 60px;
+            border-radius: 35px;
+            position: absolute;
+            top: 95px;
+            left: 95px;
+        }
+
+        .path1 {
+            -webkit-transform: rotate(45deg);
+            bottom: 68px;
+            left: 118px;
+            width: 264px;
+            height: 264px;
+        }
+
+        .path2 {
+            right: 64px;
+            border-top-right-radius: 177px;
+            width: 208px;
+            height: 199px;
+            top: 100px;
+        }
+
+        .path3 {
+            left: 64px;
+            border-top-left-radius: 177px;
+            width: 208px;
+            height: 199px;
+            top: 100px;
+        }
+
+        .path4 {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="field">
+        <div class="infield">
+            <div class="homePlate">
+                <div class="battersBox">
+                    <div class="homebase"></div>
+                </div>
+            </div>
+
+            <div class="base firstBase"></div>
+            <div class="base secondBase"></div>
+            <div class="base thirdBase"></div>
+
+            <div class="pitchersMound">
+                <div class="rubber"></div>
+            </div>
+            <div class="infieldGrass"></div>
+        </div>
+        <div class="basePath path1"></div>
+        <div class="basePath path2"></div>
+        <div class="basePath path3"></div>
+        <div class="basePath path4"></div>
+    </div>
+
+</body>
+</html>
