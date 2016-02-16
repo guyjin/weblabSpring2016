@@ -2,8 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Navbar - now with nougat!</title>
+        <title>Weblab Project Gallery</title>
         <link rel="stylesheet" href="css/styles.css" charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/sunburst.css" media="screen" title="sunburst style sheet for code formatting" charset="utf-8">
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -18,6 +21,42 @@
                     <a href="about.html">About</a>
                 </li>
             </ul>
+        </div>
+        <div class="gallery">
+            <div class="project">
+                <h2>
+                    Alice in Wonderland
+                </h2>
+                <p>
+                    This was a short project to practice HTML &amp; some basic CSS.  Convert the first chapter of Alice in Wonderland from a text file to a HTML page.
+                </p>
+                <pre class="prettyprint">
+                <code>
+                    &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;title&gt;Alice's Adventures in Wonderland - Chapter 1&lt;/title&gt;
+
+                        &lt;link rel="stylesheet" href="chapter.css" media="screen" title="no title" charset="utf-8"&gt;
+                    &lt;/head&gt;
+                    &lt;body class="chapter1"&gt;
+                        &lt;div class="chapter"&gt;
+                        &lt;h1&gt;CHAPTER I. Down the Rabbit-Hole&lt;/h1&gt;
+
+                        &lt;p&gt;&lt;span class="dropcap"&gt;A&lt;/span&gt;lice was beginning to get very tired of sitting by her sister on the
+                            bank, and of having nothing to do: once or twice she had peeped into the
+                            book her sister was reading, but it had no pictures or conversations in
+                            it, 'and what is the use of a book,' thought Alice 'without pictures or
+                            conversations?'&lt;/p&gt;
+
+                        &lt;p&gt;So she was considering in her own mind (as well as she could, for the
+                            hot day made her feel very sleepy and stupid), whether the pleasure
+                            of making a daisy-chain would be worth the trouble of getting up and
+                            picking the daisies, when suddenly a White Rabbit with pink eyes ran
+                            close by her.&lt;/p&gt;
+                </code>
+            </pre>
+                <button class="viewProject"></button>
+            </div>
         </div>
     </body>
 </html>
