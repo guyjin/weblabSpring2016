@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox - the new hotness</title>
+        <style>
+                body {
+                    padding: 0;
+                    margin:0;
+                    display: flex;
+                    height: 100vh;
+                    flex-direction: column;
+                    overflow: hidden;
+                }
+
+                .header {
+                    background-color: lightblue;
+                    min-height: 50px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-left: 1rem;
+                    font-weight: 600;
+                    font-size: 24px;
+                }
+
+                .content {
+                    background-color: #ccc;
+                    /*flex: 1 0 auto;*/
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    flex-basis: auto;
+                    display: flex;
+                }
+
+                .sidebar {
+                    background-color: #ffffff;
+                    width: 200px;
+                    flex: 1 0 auto;
+                }
+
+                .main {
+                    flex-shrink:1;
+                    background-color: #efefef;
+                    overflow-y: scroll;
+                }
+
+                .ads {
+                    background-color: pink;
+                    width: 150px;
+                    display: flex;
+                    flex: 1 0 auto;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .ad {
+                    width: 100px;
+                    height: 100px;
+                    background-color: green;
+                    display: flex;
+                    /*flex: 0 0 auto;*/
+                    flex-shrink:0 ;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 36px;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 1rem;
+                }
+
+                .ad:first-child {
+                    margin-top: 1rem;
+                }
+
+                .ad:after {
+                    content: "$";
+                    display: block;
+                    color: #fff;
+                }
+
+                .footer {
+                    background-color: lightgreen;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            header
+        </div>
+        <div class="content clearfix">
+            <div class="sidebar">
+                <!-- ul>li*4>a -->
+                <ul>
+                    <li>
+                        <a href="#">link1</a>
+                    </li>
+                    <li>
+                        <a href="#">link2</a>
+                    </li>
+                    <li>
+                        <a href="#">link3</a>
+                    </li>
+                    <li>
+                        <a href="#">link4</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="main">
+                <p>
+                    ;lkasdnasdv asldkjawe erpoiawvkjnavojaewrknqepoasidfvn lasdnv aiob  pawjhl kawdiubnewjqwefiqwdf.
+                </p>
+                <!-- p*5>lorem -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis nam debitis veritatis ullam. Totam minima quia mollitia porro distinctio doloremque repellendus, nemo perferendis ipsam quis labore corrupti atque, sint rem.</p>
+                <p>Aliquam doloribus, vero et, nulla totam asperiores non sed laudantium culpa vel consequuntur rerum excepturi assumenda id quam ea quisquam soluta. Asperiores optio ducimus dignissimos ipsum sed deserunt, doloribus corrupti!</p>
+                <p>In provident voluptatibus magni quia, sunt odit amet dicta soluta nemo nesciunt deserunt commodi saepe necessitatibus laudantium, numquam neque nobis nihil ad cumque. Debitis consequatur culpa, fuga laboriosam! Ipsum, veritatis.</p>
+                <p>Veritatis, eaque ipsum in aliquid delectus molestias ipsa alias reiciendis quas? Aut similique repudiandae ut ex laboriosam vitae, ducimus dolorem labore enim inventore. Officia repellat animi totam pariatur illum, facilis.</p>
+                <p>Error aperiam suscipit, reprehenderit doloribus veniam cumque soluta quaerat, nesciunt nemo nostrum aut aliquam deserunt debitis corporis voluptatum vel architecto assumenda commodi? Dignissimos pariatur itaque quos quis, tempora facilis neque!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore velit qui, odit quibusdam molestias dicta animi aperiam quis mollitia veniam, odio alias, nisi obcaecati. Nihil blanditiis cupiditate molestiae delectus error.</p>
+                <p>Ducimus quos quibusdam quaerat cupiditate veniam quae, suscipit ipsa accusamus dolor possimus, non nesciunt dicta nisi explicabo eius inventore molestias voluptates consectetur hic voluptas culpa commodi aliquam magni! Labore, vero.</p>
+                <p>Hic dignissimos fuga aliquam eveniet sunt quasi rem quos delectus, quisquam excepturi. Corporis, eaque adipisci vel a ratione sit, eius eos repudiandae exercitationem quae tenetur voluptatum, ea voluptatem nam, omnis!</p>
+                <p>Doloremque cumque beatae quos repellat illum, nobis eveniet pariatur architecto saepe porro voluptatibus laudantium corporis recusandae debitis sequi nostrum quia ea dolorem repellendus incidunt odio ad! Quod delectus natus eum?</p>
+                <p>Natus nisi obcaecati ad, corporis dicta laudantium dolorem in provident numquam a quis. Praesentium, dolore, adipisci! Nihil fugiat officia ducimus, atque cupiditate alias recusandae, qui culpa voluptatum natus dicta cum.</p>
+                <p>Unde vitae incidunt sunt repudiandae distinctio est voluptatum eum dolor odit officiis recusandae commodi ex neque obcaecati eius, quibusdam minus. Ut unde, facere, voluptas aperiam autem laborum laboriosam sint? Delectus.</p>
+                <p>Ea vero optio, perferendis eos deserunt unde fuga id incidunt molestias, cupiditate voluptatum maxime eaque nulla magni totam hic! Sit repudiandae ipsa nihil! Aperiam eius fuga alias magnam quae facilis?</p>
+                <p>Reprehenderit laboriosam dolorem perspiciatis impedit est! Vitae, praesentium, officiis! Et quo consequatur at totam laboriosam soluta incidunt asperiores odit! Nisi, laboriosam maxime dolores placeat impedit a necessitatibus fuga explicabo asperiores.</p>
+            </div>
+            <div class="ads">
+                <div class="ad"></div>
+                <div class="ad"></div>
+                <div class="ad"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                copyright &copy; 2016.
+            </p>
+        </div>
+    </body>
+</html>
