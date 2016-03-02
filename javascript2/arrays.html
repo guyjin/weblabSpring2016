@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript Arrays</title>
+    </head>
+    <body>
+        <h1>Arrays</h1>
+        <h2>
+            array.toString()
+        </h2>
+        <p>
+            For Array objects, the toString method joins the array and returns one string containing each array element separated by commas. For example, the following code creates an array and uses toString to convert the array to a string.
+        </p>
+        <pre>
+            <code>
+                var fruit = ['apples','oranges','bananas'];
+                var myfruit = fruit.toString();
+            </code>
+        </pre>
+
+        <h2>
+            array.valueOf()
+        </h2>
+        <p>
+            The valueOf() method returns the array.
+        </p>
+        <pre>
+            <code>
+                var fruit = ['apples','oranges'];
+                fruit.valueOf();
+            </code>
+        </pre>
+        <h2>
+            array.slice()
+        </h2>
+        <p>
+            The slice() method returns a shallow copy of a portion of an array into a new array object.
+        </p>
+        <pre>
+            <code>
+                var fruit = ['apples','oranges','bananas'];
+                fruit.slice(0,1)
+            </code>
+        </pre>
+        <h2>
+            array.concat()
+        </h2>
+        <p>
+            The concat() method returns a new array comprised of the array on which it is called joined with the array(s) and/or value(s) provided as arguments.
+        </p>
+        <pre>
+            <code>
+                var fruit = ['apples','oranges','bananas'];
+                var veggies = ['peas','carrots','onions'];
+                var healthy = fruit.concat(veggies);
+                console.log(healthy);
+            </code>
+        </pre>
+        <h2>
+            array.sort()
+        </h2>
+        <p>
+            The sort() method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points.
+        </p>
+        <pre><code>
+            var fruit = ['cherries', 'apples', 'bananas'];
+            fruit.sort(); // ['apples', 'bananas', 'cherries']
+        </code></pre>
+        <h2>
+            array.reverse()
+        </h2>
+        <p>
+            Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.reverse()
+        </code></pre>
+        <h2>
+            array.push()
+        </h2>
+        <p>
+            Add to the end of an Array
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.push('grapes');
+            console.log(fruit);
+        </code></pre>
+        <h2>
+            array.length
+        </h2>
+        <p>
+            The length property represents an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.lenth;
+        </code></pre>
+        <h2>
+            array.shift()
+        </h2>
+        <p>
+            The shift() method removes the first element from an array and returns that element. This method changes the length of the array.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            var newFruit = fruit.shift();
+            console.log(newFruit);
+        </code></pre>
+        <h2>
+            array.unshift()
+        </h2>
+        <p>
+            The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.unshift('grapes');
+            console.log(fruit);
+        </code></pre>
+        <h2>
+            array.push()
+        </h2>
+        <p>
+            The push() method adds one or more elements to the end of an array and returns the new length of the array.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.push('grapes');
+            console.log(fruit);
+        </code></pre>
+        <h2>
+            array.pop()
+        </h2>
+        <p>
+            The pop() method removes the last element from an array and returns that element.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            fruit.pop();  // bananas
+        </code></pre>
+        <h2>
+            array.splice()
+        </h2>
+        <p>
+            The splice() method changes the content of an array by removing existing elements and/or adding new elements.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            var oldFruit = fruit.splice(1,1,'grapes')
+            console.log(fruit, oldFruit)
+        </code></pre>
+        <h2>
+            array.join()
+        </h2>
+        <p>
+            The join() method joins all elements of an array into a string.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            var myFruit1 = fruit.join();
+            console.log(myFruit1);
+            var myFruit2 = fruit.join(' + ');
+            console.log(myFruit2);
+        </code></pre>
+        <h2>
+            array.map()
+        </h2>
+        <p>
+            The map() method creates a new array with the results of calling a provided function on every element in this array.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            var fruitLengths = fruit.map(function(obj){
+                var l = obj.length;
+                return l;
+            });
+            console.log(fruitLengths)
+        </code></pre>
+        <h2>
+            array.reduce()
+        </h2>
+        <p>
+            The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+        </p>
+        <pre><code>
+            var fruit = ['apples','oranges','bananas'];
+            var fruitLengths = fruit.reduce(function(total,num) {
+                return total + num;
+            });
+            console.log(fruitLengths); //applesorangesbananas
+        </code></pre>
+        <h2>
+            array.filter()
+        </h2>
+        <p>
+            The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+        </p>
+        <pre><code>
+            function isBigEnough(value) {
+              return value.length >= 7;
+            }
+            var filtered = ['apples','oranges','bananas'].filter(isBigEnough);
+            console.log(filtered); //["oranges", "bananas"]
+
+        </code></pre>
+    </body>
+</html>
