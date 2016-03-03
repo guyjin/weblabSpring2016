@@ -92,15 +92,6 @@ app.post('/about', function(req,res) {
     });
 })
 
-app.get('/about/:index',function(req,res) {
-    console.log(req.params);
-    var index = req.params.index;
-    global.reasons.splice(index,1);
-    res.render('pages/about', {
-        reasons: global.reasons
-    });
-})
-
 // input form
 // app.get('/contact', function(req,res) {
 //     res.sendfile('/pages/contact.html');

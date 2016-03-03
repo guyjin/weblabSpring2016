@@ -1,4 +1,4 @@
-<!-- views/pages/index.ejs -->
+<!-- views/pages/about.ejs -->
 
 <!DOCTYPE html>
 <html>
@@ -15,22 +15,24 @@
         <!-- Include the header of the page -->
         <% include ../partials/header %>
     </header>
+    <div class="content">
     <h3>I'm awesome because:</h3>
     <ul>
         <!-- loop over the reasons array and out put its' values as members of the list -->
-        <% reasons.forEach(function(reason) { %>
-            <li><%= reason.reason %></li>
+        <% reasons.forEach(function(reason, i) { %>
+            <li><%= reason.reason %><a href="/about/<%=i%>">X</a></li>
         <% }); %>
     </ul>
     <!--
         Note the action of the form points to the same route, but the method is 'POST'  We will be capturing
         the form input from the input box 'myReason'
     -->
-    <form class="" action="/about" method="post">
+    <form class="myReasonForm" id="myReasonForm" action="/about" method="post">
         <label for="myReason">Because:</label>
         <input type="text" name="myReason" id="myReason">
         <button type="submit">add</button>
     </form>
+    </div>
     <footer>
         <% include ../partials/footer %>
     </footer>

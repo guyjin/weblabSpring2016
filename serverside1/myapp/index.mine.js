@@ -6,6 +6,16 @@ var express = require('express');
 // assign it to the var bodyParser
 var bodyParser = require('body-parser');
 
+// things to install
+// npm install cookie-parser --save
+// npm install request --save
+// var cookieParser = require('cookie-parser');
+// var request = require('request');
+// app.use(request())
+// app.use(cookieParser())
+
+
+
 var app = express();
 
 //create a global array of simple json objects.
@@ -82,20 +92,14 @@ app.post('/about', function(req,res) {
         reason: req.body.myReason
     }
     // us the array.push method to add the new object 'theReason' to the existing global array 'reasons'
-    global.reasons.push(theReason);
+    if(theReason !== '') {
+            global.reasons.push(theReason);
+    }
+
     // show the updated array in the server console log
     console.log(global.reasons);
 
     // render the 'about' page again & pass in the updated 'reasons' array.
-    res.render('pages/about', {
-        reasons: global.reasons
-    });
-})
-
-app.get('/about/:index',function(req,res) {
-    console.log(req.params);
-    var index = req.params.index;
-    global.reasons.splice(index,1);
     res.render('pages/about', {
         reasons: global.reasons
     });
