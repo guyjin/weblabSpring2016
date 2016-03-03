@@ -6,7 +6,19 @@ var express = require('express');
 // assign it to the var bodyParser
 var bodyParser = require('body-parser');
 
+// random-word pulls a word from a huge list for us.  Assign it to the new object called randomWord;
+var randomWord = require('random-word');
+
+// request will allow us to send requests to systems outside our server and capture that response.
+// Assign it to a new object called 'request'
+var request  = require('request');
+
+
 var app = express();
+
+// cookie-parser allows us to examine cookies being passed back with requests.
+// assign cookie-parser to var cookieParser
+var cookieParser = require('cookie-parser');
 
 //create a global array of simple json objects.
 // by making this global multiple methods can access or modify the array.
@@ -26,12 +38,8 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
-
-// return an index.html file when the default route is requested.
-// app.get('/', function (req,res) {
-//     res.sendfile('index.html');
-// });
+// tell the app to use the cookie parser
+app.use(cookieParser());
 
 // use res.render to load an ejs view file
 
@@ -92,14 +100,61 @@ app.post('/about', function(req,res) {
     });
 })
 
+
+// Building a new route that allows us to remove an item from the global.reasons array.
+// the route accepts the index of the reason via the req.params object.
 app.get('/about/:index',function(req,res) {
+    // log the params object.
     console.log(req.params);
-    var index = req.params.index;
-    global.reasons.splice(index,1);
+    // assign the index to the var indexOfTheReason
+    var indexOfTheReason = req.params.index;
+    // splice the global.reasons array at the index and remove one member.
+    global.reasons.splice(indexOfTheReason,1);
+    // now that the array has been modified, render the About page which will include the updated array.
     res.render('pages/about', {
         reasons: global.reasons
     });
-})
+});
+
+// This route lets us play with some cookies.
+app.get('/name', function(req, res) {
+    // create a var theName with a default value of 'Human'
+    var theName = 'Human';
+    // use the randomWord middleware to generate a random word and assign it to 'theWord'
+    var theWord = randomWord();
+    // log 'theWord'
+    console.log(theWord);
+    // build a url to get a definition of our new random word
+    // we concatenate the base of the url and our word together
+    var url = 'http://dictionaryapi.net/api/definition/' + theWord;
+    // fire the request to the external server using the 'request' object.
+    // we provide the URL we just built and provide a callback function that
+    // accepts an error, response, & body object from 'request'.
+    request(url, function (error, response, body) {
+        // if there's no error and the status of the response is good...
+      if (!error && response.statusCode === 200) {
+          // grab the body of the response and assign it to 'results'
+          var results = body;
+          // console.log that beast
+          // we ran out of time and overloaded the API working to pull the definition from the results.
+          // we'll see what we can do with this is the lab.
+        console.log(results) ;
+      }
+    })
+    // each request to this server can carry a cookie with it.
+    // let's check for a cookie called 'username'
+    if(req.cookies.username) {
+        // if there is one, assign it's value to 'theName'
+        theName = req.cookies.username;
+    }
+    // Be friendly, send a message to the name in the console.log
+    console.log("Hello there, " + req.cookies.username);
+    // pass theWord and theName to the render method to be used in the name.ejs template.
+    res.render('pages/name',{
+        name: theName,
+        word: theWord
+    })
+});
 
 // input form
 // app.get('/contact', function(req,res) {
