@@ -1,0 +1,21 @@
+{
+  "name": "diceware",
+  "version": "1.0.0",
+  "description": "node implementation of the diceware passphrase generator.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dice",
+    "diceware",
+    "passphrase"
+  ],
+  "author": "Ben Vaughan",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
