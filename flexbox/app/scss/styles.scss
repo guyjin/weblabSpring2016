@@ -1,3 +1,5 @@
+$bgcolor = #fff;
+
 body {
     padding: 0;
     margin: 0;
@@ -19,7 +21,7 @@ body {
 }
 
 .container {
-    background: dodgerblue;
+    background: $bgcolor;
     flex:1 1 auto;
     display: flex;
     padding: 1rem;
@@ -45,7 +47,7 @@ body {
         .product {
             width: 150px;
             height: 150px;
-            background-color: #ccc;
+            background-color: $bgcolor;
 
             &:nth-child(4) {
                 display: flex;

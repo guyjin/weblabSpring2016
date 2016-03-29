@@ -6,7 +6,7 @@ $(function() {
         "lastName": '',
         "email": '',
         "password":''
-    }
+    };
     // get control of my form to prevent it from submitting in the traditional manner
     $('form').on('submit', function(e) {
         e.preventDefault();
@@ -76,7 +76,7 @@ $(function() {
         } else {
             return false;
         }
-    }
+    };
 
 
 
