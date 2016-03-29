@@ -32,7 +32,7 @@ body {
     .container .main .product {
       width: 150px;
       height: 150px;
-      background-color: #ccc; }
+      background-color: dodgerblue; }
       .container .main .product:nth-child(4) {
         display: flex;
         justify-content: center;
